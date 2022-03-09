@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="description" content="Personal profile for Samay Gandhi" />
+	<meta name="keywords" content="Samay, Samay Gandhi, Perosnal Website" />
+	<meta name="author" content="Samay Gandhi" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Samay Gandhi | Blogs</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./css/styles.css" type="text/css"/>
+	<script type="text/javascript" src="DOMPurify-main/dist/purify.min.js"></script>
+	<script type="module" src="styledblog.js"></script>
+	<style>
+				#postsList {
+					list-style-type: none;
+					padding: 0;
+					margin: 0;
+					background-color: beige;
+
+				}
+				#addBtn {
+					background-color: #4CAF50;
+					color: white;
+					padding: 10px;
+					border: none;
+					cursor: pointer;
+					width: 100%;
+					opacity: 0.9;
+				}
+
+	</style>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-NL9HZ8726S"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-NL9HZ8726S');
+	</script>
+</head>
+<body>
+	<header>
+		<nav>
+			<a href="./"><img id="logo" src="imgs/logo.png" alt="logo" height="70px"/> </a>
+			<ul id="topnav">
+				<li> <a href="who.html">Who</a> </li>
+				<li> <a href="what.html">What</a> </li>
+				<li> <a href="wherewhen.html">Where/When</a> </li>
+				<li> <a href="why.html">Why</a> </li>
+				<li> <a href="experiment.html">Wow</a> </li>
+			</ul>
+		</nav>
+		<script async src="https://cse.google.com/cse.js?cx=d0216f865c4c45eaf"></script>
+		<div class="gcse-search"></div>
+	</header>
+	<div id='middle-section'>
+	<aside>
+	<div id="header-info-updates">
+		<h3>Updates</h3>
+		<ul>
+			<li> Graduating @ WI22 from UCSD</li>
+			<li> Gonna start working as Software Developer</li>
+		</ul>
+	</div>
+	<hr>
+	<div id="header-info-social">
+		<h3>Social</h3>
+		<ul>
+			<li><a href="https://www.facebook.com/samay.superstar/" target="_blank">Facebook</a></li>
+			<li><a href="https://www.linkedin.com/in/samay-gandhi/" target="_blank">LinkedIn</a></li>
+		</ul>
+	</div>	
+</aside>	
+<main>
+	<h1>Blogs</h1>
+	<dialog id = "addPost">
+        <form method="dialog">
+			<h2>Add a Post</h2>
+			<label for="title">Title</label>
+			<input type="text" name="title" id="add-title" required>
+			<br>
+			<label for="date">Date</label>
+			<input type="date" name="date" id="add-date" required>
+			<br>
+			<label for="content">Content</label>
+			<textarea name="content" id="add-content" required></textarea>
+			<menu>
+				<button id="addCancel" >Cancel</button>
+				<button id="addOkay" value="default">Add</button>
+			</menu>
+		</form>
+    </dialog>
+	<dialog id = "editPost">
+		<form method="dialog">
+			<h2>Edit Post</h2>
+			<label for="title">Title</label>
+			<input type="text" name="title" id="edit-title" required>
+			<br>
+			<label for="date">Date</label>
+			<input type="date" name="date" id="edit-date" required>
+			<br>
+			<label for="content">Content</label>
+			<textarea name="content" id="edit-content" required></textarea>
+			<menu>
+				<button id="editCancel" value="cancel">Cancel</button>
+				<button id="editOkay" value="default">Edit</button>
+			</menu>
+		</form>
+	</dialog>
+	<dialog id = "deletePost">
+		<form method="dialog">
+			<h2>Delete Post</h2>
+			<menu>
+				<button id="deleteCancel" value="cancel">Cancel</button>
+				<button id="deleteOkay" value="default">Delete</button>
+			</menu>
+		</form>
+	</dialog>
+
+	<ul id="postsList">
+	</ul>
+
+			
+	<button id="addBtn">Add</button>
+	</main>
+</div>
+<footer>
+		<hr/>
+		<p>&copy; Samay Gandhi</p>
+		<p>Sitemap incoming</p>
+	</footer>
+</body>
+
+</html>
