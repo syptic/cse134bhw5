@@ -3,6 +3,8 @@
     "public": "public",
     "ignore": [
       "firebase.json",
+      "package-lock.json",
+      "package.json",
       "**/.*",
       "**/node_modules/**"
     ]
