@@ -7,20 +7,19 @@
 	<meta name="keywords" content="Samay, Samay Gandhi, Perosnal Website" />
 	<meta name="author" content="Samay Gandhi" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Samay Gandhi | Home</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif&display=swap" rel="stylesheet">
+	<title>Samay Gandhi | MethodTest</title>
 	<link rel="stylesheet" href="./css/styles.css" type="text/css" />
+	<script type="text/javascript" src="DOMPurify-main/dist/purify.min.js"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-NL9HZ8726S"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag() { dataLayer.push(arguments); }
 		gtag('js', new Date());
-
 		gtag('config', 'G-NL9HZ8726S');
-</script>
+	</script>
+	<!-- Module for REST API -->
+	<script type="module" src="methodtest.js"></script>
 </head>
 
 <body>
@@ -35,8 +34,6 @@
 				<li> <a href="experiment.html">Wow</a> </li>
 			</ul>
 		</nav>
-		<script async src="https://cse.google.com/cse.js?cx=d0216f865c4c45eaf"></script>
-		<div class="gcse-search"></div>
 	</header>
 	<div id='middle-section'>
 		<aside>
@@ -57,24 +54,31 @@
 			</div>
 		</aside>
 		<main>
-			<section id="home-content">
-				<h1> <em>Whatever happens, happens</em></h1>
-				<p><a href="https://www.cbr.com/cowboy-bebop-anime-best-quotes/ "> by Spike, Cowboy Bebop</a></p>
-					<audio id="musicplayer" autoplay controls>
-						<source src="media/bgmusic.mp3">
-					</audio>
-				<figure>
-					<picture>
-						<source media="(max-width: 800px)" srcset="imgs/hero-image-cropped.jpeg">
-						<source type="image/webp" srcset="imgs/hero-image.webp">
-						<img class="main-image" src="imgs/hero-image.png " alt="Spike's Image" />
-					</picture>
-					<figcaption>Spike, Cowboy bebop</figcaption>
-				</figure>
+			<section id="method-form">
+				<form id="article-form">
+					<fieldset>
+						<legend>Method Test</legend>
+						<label for="article-id">Id:</label>
+						<input type="text" id="article-id" name="article-id"><br>
+						<label for="article-name">Name:</label>
+						<input type="text" id="article-name" name="article-name"><br>
+						<label for="article-body">Body:</label><br>
+						<textarea name="article-body" id="article-body"></textarea><br>
+						<label for="article-date">Date:</label>
+						<input type="date" id="article-date" name="article-date" readonly><br>
+						<hr />
+						<button id="postBtn" type="button">Post</button> |
+						<button id="getBtn" type="button">Get</button> |
+						<button id="deleteBtn" type="button">Delete</button> |
+						<button id="putBtn" type="button">Put</button>
+					</fieldset>
+				</form>
 			</section>
+			<br>
+			<output id="response"></output>
 		</main>
-		</div>
-		<footer>
+	</div>
+	<footer>
 		<hr />
 		<p>&copy; Samay Gandhi</p>
 		<p>Sitemap incoming</p>
