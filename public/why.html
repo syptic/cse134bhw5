@@ -22,26 +22,8 @@
 		gtag('config', 'G-NL9HZ8726');
 	</script>
 	<script type="text/javascript" src="DOMPurify-main/dist/purify.min.js"></script>
-	<script type="module" src="whyblog.js"></script>
-	<style>
-		#postsList {
-			list-style-type: none;
-			padding: 0;
-			margin: 0;
-			background-color: beige;
-	
-		}
-	
-		#addBtn {
-			background-color: #4CAF50;
-			color: white;
-			padding: 10px;
-			border: none;
-			cursor: pointer;
-			width: 100%;
-			opacity: 0.9;
-		}
-	</style>
+	<script type="module" src="./modules/blog.js"></script>
+	<link rel="stylesheet" href="./css/blog.css" type="text/css" />
 </head>
 
 <body>
@@ -56,8 +38,8 @@
 				<li> <a href="why.html"><strong>Why</strong></a> </li>
 			</ul>
 		</nav>
-<script async src="https://cse.google.com/cse.js?cx=d0216f865c4c45eaf"></script>
-<div class="gcse-search"></div>
+		<script async src="https://cse.google.com/cse.js?cx=d0216f865c4c45eaf"></script>
+		<div class="gcse-search"></div>
 	</header>
 	<div id='middle-section'>
 		<aside>
@@ -78,74 +60,35 @@
 			</div>
 		</aside>
 		<main>
-			<section id="why-content">
-		
-				<div id="why-thoughts">
-					<h3 class="why-title">Thoughts</h3>
-					<ul class="why-list">
-						<li class="why-item">
-							<article>
-								<h5 class="article-title">
-									What is Life
-								</h5>
-								<p class="article-summary">
-									What is Life a memoir by Samay Gandhi explores the philosophical and philosophical
-									aspects of life.
-									</p>
-									</article>
-						</li>
-						<li class="why-item">
-							<article>
-								<h5 class="article-title">
-									How is Life </h5>
-									<p class="article-summary">
-									How is Life a memoir by Samay Gandhi explores why we ask what is life instead of
-									asking our loved ones, how it is?
-									</p>
-									</article>
-									</li>
-									</ul>
-									</div>
-
-<div id="why-interests">
-	<h3 class="why-title">Interests</h3>
-	<ul class="why-list">
-		<li class="why-item">
-			<article>
-				<h5 class="article-title">
-					Desi Hip-Hop
-				</h5>
-				<p class="article-summary">
-					Desi Hip-Hop is a hip-hop music genre that originated in the gullies of India.
-				</p>
-			</article>
-						</li>
-						<li class="why-item">
-							<article>
-								<h5 class="article-title">
-									Chess </h5>
-									<p class="article-summary">
-									Another thing given to the world by India, shatranj aka game of chess is my favorite
-									past-time.
-									</p>
-									</article>
-									</li>
-									</ul>
-									</div>
-									</section>
+			<section id="why-auth">
+				<div id="logIn">
+					<form id="logInForm">
+						<label for="username">Email:</label>
+						<input type="text" name="username" id="emailInput" required autocomplete="email"><br>
+						<label for="password">Password:</label>
+						<input type="password" name="password" id="passwordInput" required autocomplete="current-password">
+						<button type="button" id="loginBtn">Login</button>
+					</form>
+					<output id="errorOutput"></output>
+				</div>
+				<div id="logOut">
+					<h3 id="userGreeting"></h3>
+					<button id="logoutBtn">Logout</button>
+				</div>
+				</section>
 			<section id="why-posts">
 				<h1>Blogs</h1>
 				<dialog id="addPost">
 					<form method="dialog">
 						<h2>Add a Post</h2>
 						<label for="title">Title</label>
-						<input type="text" name="title" id="add-title" required>
+						<input type="text" name="title" id="add-title">
 						<br>
 						<label for="date">Date</label>
-						<input type="date" name="date" id="add-date" required>
+						<input type="date" name="date" id="add-date" readonly>
 						<br>
 						<label for="content">Content</label>
-						<textarea name="content" id="add-content" required></textarea>
+						<textarea name="content" id="add-content"></textarea>
 						<menu>
 							<button id="addCancel">Cancel</button>
 							<button id="addOkay" value="default">Add</button>
@@ -156,13 +99,13 @@
 					<form method="dialog">
 						<h2>Edit Post</h2>
 						<label for="title">Title</label>
-						<input type="text" name="title" id="edit-title" required>
+						<input type="text" name="title" id="edit-title">
 						<br>
 						<label for="date">Date</label>
-						<input type="date" name="date" id="edit-date" required>
+						<input type="date" name="date" id="edit-date" readonly>
 						<br>
 						<label for="content">Content</label>
-						<textarea name="content" id="edit-content" required></textarea>
+						<textarea name="content" id="edit-content"></textarea>
 						<menu>
 							<button id="editCancel" value="cancel">Cancel</button>
 							<button id="editOkay" value="default">Edit</button>
@@ -178,7 +121,6 @@
 						</menu>
 					</form>
 				</dialog>
-			
 				<ul id="postsList">
 				</ul>
 				<button id="addBtn">Add</button>

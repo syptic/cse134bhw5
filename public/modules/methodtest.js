@@ -1,5 +1,16 @@
 import * as serverMethods from "./serverMethods.js";
 import * as articleMethods from "./articleMethods.js";
+import * as responseMethods from "./responseMethods.js";
+
+function responseReady() {
+  if (this.readyState === 4 && this.status === 200) {
+    let json = JSON.parse(this.responseText);
+    // set output as the response from the server
+    responseMethods.outputResponse({ ...json["args"], ...json["json"] });
+  } else {
+    responseMethods.outputError(this.responseText);
+  }
+}
 
 document.addEventListener("DOMContentLoaded", onPageLoad);
 function onPageLoad() {
@@ -26,7 +37,8 @@ function postArticle() {
     return;
   }
   // send the article object to the server
-  serverMethods.postMethod(article);
+  responseMethods.outputProcessing("POST Request");
+  serverMethods.postMethod("https://httpbin.org/post", article, responseReady);
 }
 
 function getArticle() {
@@ -36,7 +48,8 @@ function getArticle() {
     return;
   }
   // fetch the article from the server
-  serverMethods.getMethod(args);
+  responseMethods.outputProcessing("GET Request");
+  serverMethods.getMethod("https://httpbin.org/get", args, responseReady);
 }
 
 function putArticle() {
@@ -51,7 +64,13 @@ function putArticle() {
     return;
   }
   // put the article object in the server
-  serverMethods.putMethod(args, article);
+  responseMethods.outputProcessing("PUT Request");
+  serverMethods.putMethod(
+    "https://httpbin.org/put",
+    args,
+    article,
+    responseReady
+  );
 }
 
 function deleteArticle() {
@@ -61,5 +80,6 @@ function deleteArticle() {
     return;
   }
   // delete the article from the server
-  serverMethods.deleteMethod(args);
+  responseMethods.outputProcessing("DELETE Request");
+  serverMethods.deleteMethod("https://httpbin.org/delete", args, responseReady);
 }
