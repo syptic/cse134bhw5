@@ -10,3 +10,4 @@ Added a seperate css file for blogs and user auth.
 Got decution in part 1 for minor div-itis so distributed code into different sections and used better tags such as details, menu and article to coherently divide the code and make better usage of existing HTML tags.
 Improved css, used standard colors across the website with contrast for better readbility and management.
 Improved lightHouse score to 100s and high 90s. Made fixes such as adding aria-labels, providing image dimenions and only importing firebase modules as needed.
+Also added favicon.ico to better represent my website.
