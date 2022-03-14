@@ -62,8 +62,6 @@ nav {
 }
 #topnav {
   display: flex;
-  max-width: 600px;
-  justify-content: space-around;
   align-items: baseline;
   padding: 0 20px;
 }
