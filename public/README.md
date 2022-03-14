@@ -1,8 +1,9 @@
-# site : https://syptic.github.io/hw4js/
+# site : https://cse134bhw5-63a32.web.app/
 # PID : A15542406
 # Name : Samay
 
 ### Welcome to my personal website ###
+Note - part 3 has been done on why.html not crud.html
 From changelog.md:
 To my portfolio website on syptic.github.io, I added Google analytics.
 To match the css edit to imgs, I added background music to the home page with audio-controls.
