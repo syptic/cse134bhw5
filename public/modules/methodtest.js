@@ -6,7 +6,7 @@ function responseReady() {
   if (this.readyState === 4 && this.status === 200) {
     let json = JSON.parse(this.responseText);
     // set output as the response from the server
-    responseMethods.outputResponse({ ...json["args"], ...json["json"] });
+    responseMethods.outputResponse({ ...json["args"], ...json["json"] }, json);
   } else {
     responseMethods.outputError(this.responseText);
   }
